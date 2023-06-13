@@ -2,7 +2,7 @@ class Sensor{
     constructor(car){
         this.car = car;
         // The car can detect obstacles by rays, so we can set the number of rays, how long the rays are 
-        // and the spreading angle here.
+        // and the angle between the rays here.
         this.rayCount = 5;
         this.rayLength = 150;
         this.raySpread = Math.PI/2;
@@ -21,6 +21,7 @@ class Sensor{
         }
     }
 
+    // This method will return the intersection point of two lines.
     #getReading(ray, roadBorders){
         let touches = [];
         for(let i=0;i<roadBorders.length;i++){
@@ -45,6 +46,7 @@ class Sensor{
         }
     }
 
+    // This method will cast the rays from the car.
     #castRays(){
         this.rays = [];
         for(let i=0;i<this.rayCount;i++){
@@ -62,13 +64,14 @@ class Sensor{
         }
     }
 
+    // This function displays the rays on the car.
     draw(ctx){
         for(let i = 0; i < this.rayCount ; i++){
             let end = this.rays[i][1];
             if(this.readings[i]){
                 end = this.readings[i];
             }
-
+            
             ctx.beginPath();
             ctx.lineWidth = 2;
             ctx.strokeStyle = "yellow";
@@ -81,7 +84,7 @@ class Sensor{
                 end.y
             );
             ctx.stroke();
-
+            
             ctx.beginPath();
             ctx.lineWidth = 2;
             ctx.strokeStyle = "black";
