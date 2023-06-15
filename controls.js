@@ -1,12 +1,19 @@
 class Controls{
-    constructor(){
+    constructor(type){
         this.forward=false;
         this.left=false;
         this.right=false;
         this.reverse=false;
-        
-        // This method is called when the controls are added to the scene.
-        this.#addKeyboardListeners();
+
+        switch(type){
+            case "KEYS": // The player will control the car with the arrow keys
+                // This method is called when the controls are added to the scene.
+                this.#addKeyboardListeners();
+                break;
+            case "DUMMY": // The dummy cars will keep moving forward
+                this.forward = true;
+                break;
+        }
     }
 
     #addKeyboardListeners(){
