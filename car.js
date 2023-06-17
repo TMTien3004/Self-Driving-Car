@@ -16,6 +16,8 @@ class Car{
         //Check car if crashed or not
         this.damaged = false;
 
+        this.useBrain = controlType == "AI";
+
         // We only want the sensors on the controlled car, not the dummy cars
         if(controlType != "DUMMY"){
             //Car's sensors
@@ -45,6 +47,13 @@ class Car{
             );
             const outputs = NeuralNetwork.feedForward(offsets, this.brain);
             console.log(outputs);
+
+            if(this.useBrain){
+                this.controls.forward = outputs[0];
+                this.controls.left = outputs[1];
+                this.controls.right = outputs[2];
+                this.controls.reverse = outputs[3];
+            }
         }
     }
 
