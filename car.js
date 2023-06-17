@@ -20,6 +20,12 @@ class Car{
         if(controlType != "DUMMY"){
             //Car's sensors
             this.sensor = new Sensor(this);
+
+            // Implementing neural network into the car's controller
+            this.brain = new NeuralNetwork(
+                [this.sensor.rayCount, 6, 4]
+            );
+
         }
 
         //Car's controls
@@ -34,6 +40,11 @@ class Car{
         }
         if(this.sensor){
             this.sensor.update(roadBorders, traffic);
+            const offsets = this.sensor.readings.map(
+                s => s == null ? 0 : 1 - s.offset
+            );
+            const outputs = NeuralNetwork.feedForward(offsets, this.brain);
+            console.log(outputs);
         }
     }
 
