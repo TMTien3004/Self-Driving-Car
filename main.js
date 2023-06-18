@@ -44,6 +44,6 @@ function animate(){
     // providing a smooth animation loop.
     carCtx.restore();
 
-    // Visualizer.drawNetwork(networkCtx, car.brain);
+    Visualizer.drawNetwork(networkCtx, car.brain);
     requestAnimationFrame(animate);
 }
