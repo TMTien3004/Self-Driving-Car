@@ -9,7 +9,7 @@ const carCtx = carCanvas.getContext('2d');
 const networkCtx = networkCanvas.getContext('2d');
 
 const road = new Road(carCanvas.width/2, carCanvas.width*0.9);
-const car = new Car(road.getLaneCenter(1), 100, 30, 50, "KEYS"); // This is the controlled car
+const car = new Car(road.getLaneCenter(1), 100, 30, 50, "AI"); // This is the controlled car
 
 // We add more cars to the road
 const traffic = [
@@ -18,7 +18,7 @@ const traffic = [
 
 animate();
 
-function animate(){
+function animate(time){
     for(let i = 0; i < traffic.length; i++){
         traffic[i].update(road.borders,[]);
     }
@@ -44,6 +44,8 @@ function animate(){
     // providing a smooth animation loop.
     carCtx.restore();
 
+    //Adding animation to the neural network visualization
+    networkCtx.lineDashOffset = -time / 50;
     Visualizer.drawNetwork(networkCtx, car.brain);
     requestAnimationFrame(animate);
 }
