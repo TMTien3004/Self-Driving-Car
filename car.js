@@ -46,7 +46,6 @@ class Car{
                 s => s == null ? 0 : 1 - s.offset
             );
             const outputs = NeuralNetwork.feedForward(offsets, this.brain);
-            console.log(outputs);
 
             if(this.useBrain){
                 this.controls.forward = outputs[0];
@@ -159,7 +158,7 @@ class Car{
     }
 
     // This method draws the car on the canvas.
-    draw(ctx, color){
+    draw(ctx, color, drawSensors = false){
         // Check if car is crashed or not
         if(this.damaged){
             ctx.fillStyle = 'gray';
@@ -174,7 +173,7 @@ class Car{
         }
         ctx.fill();
 
-        if(this.sensor){
+        if(this.sensor && drawSensors){
             this.sensor.draw(ctx);
         }
     }
