@@ -9,7 +9,7 @@ const carCtx = carCanvas.getContext('2d');
 const networkCtx = networkCanvas.getContext('2d');
 
 const road = new Road(carCanvas.width/2, carCanvas.width*0.9);
-const N = 2000; // Number of cars we want to mutate
+const N = 1; // Number of cars we want to mutate
 const cars = generateCars(N);
 let bestCar = cars[0];
 
