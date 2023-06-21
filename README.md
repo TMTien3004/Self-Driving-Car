@@ -1,6 +1,9 @@
 # Self-Driving Car in JavaScript
 A simple simulation of a self-driving car moving through obstacles in JavaScript.
 
+## Preview
+
+
 ## Difficulties
 
 
