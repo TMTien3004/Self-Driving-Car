@@ -24,16 +24,25 @@ if(localStorage.getItem("bestBrain")){
 
 // We add traffic to the road by adding more dummy cars as obstacles
 const traffic = [
-    new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -100, 30, 70, "DUMMY", 2),
+    new Car(road.getLaneCenter(2), -100, 30, 70, "DUMMY", 2),
     new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -500, 30, 50, "DUMMY", 2),
+    new Car(road.getLaneCenter(0), -500, 30, 70, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -500, 30, 70, "DUMMY", 2),
     new Car(road.getLaneCenter(0), -700, 30, 50, "DUMMY", 2),
     new Car(road.getLaneCenter(1), -700, 30, 50, "DUMMY", 2),
     new Car(road.getLaneCenter(2), -800, 30, 50, "DUMMY", 2),
     new Car(road.getLaneCenter(0), -900, 30, 50, "DUMMY", 2),
     new Car(road.getLaneCenter(2), -900, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -1100, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -1100, 30, 50, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -1100, 30, 60, "DUMMY", 2),
+    new Car(road.getLaneCenter(2), -1100, 30, 60, "DUMMY", 2),
+    new Car(road.getLaneCenter(0), -1300, 30, 60, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -1300, 30, 60, "DUMMY", 2),
+    new Car(road.getLaneCenter(0), -1500, 30, 70, "DUMMY", 2),
+    new Car(road.getLaneCenter(2), -1500, 30, 70, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -1700, 30, 50, "DUMMY", 2),
+    new Car(road.getLaneCenter(0), -1900, 30, 70, "DUMMY", 2),
+    new Car(road.getLaneCenter(2), -1900, 30, 70, "DUMMY", 2),
 
 ];
 
