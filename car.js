@@ -8,7 +8,7 @@ class Car{
 
         //Car's speed and acceleration
         this.speed = 0;
-        this.acceleration = 0.6;
+        this.acceleration = 1.5;
         this.maxSpeed = maxSpeed;
         this.friction = 0.05;
         this.angle = 0;
