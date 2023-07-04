@@ -7,10 +7,6 @@ A simple simulation of a self-driving car moving through obstacles in JavaScript
 </p>
 
 
-## Difficulties
-
-
-
 ## Pre-requisite
 In order to get a better understanding of the project, you need to have prior knowledge in the following subjects:
 - Mathematics: Linear Algebra (Basic)
